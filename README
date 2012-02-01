@@ -1,0 +1,14 @@
+Purpose
+=======
+This is a small addition to very useful [jstimezonedetect](https://bitbucket.org/pellepim/jstimezonedetect) script written by Josh Fraser and Jon Nylander. It is a drop-in solution for when you need to present the user with a timezone `<select>` box that you would like to be preset to their browser's timezone. It is also useful if you like the pattern of having a "Detect Timezone" checkbox option and want to show a disabled `<select>` box with correct information as confirmation that the detection worked.
+
+The `<option value="...">`  fields are [tz-database](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)/Olson names (e.g "America/Los_Angeles"). I found this preferable to something like "-5" since the Olson names can be use with other timezone libraries (such as [pytz](http://pytz.sourceforge.net/)) to handle the subtleties of daylight savings for that region. That's also why you'll find multiple entries for a given hour offset in the list.
+
+Please note that the detection script does no geolocation. It is simply working with the browser's reported Date information to make an intelligent guess at the timezone. I've found it to work quite well, but you should not assume the detection will always be correct. 
+
+If you're testing it by changing your system's timezone, be sure to open a new browser tab for correct behavior.
+
+Maintenance
+===========
+Timezone rules change on occassion. I will track the parent project which, so far, has adopted recent changes.
+
